@@ -1,7 +1,11 @@
 package pl.itechgroup.bank;
 
+import pl.itechgroup.bank.vehicles.Car;
 
-import java.awt.*;
+
+
+import static pl.itechgroup.bank.vehicles.Truck.honk;
+
 import java.util.Date;
 
 public class Main {
@@ -18,6 +22,10 @@ public class Main {
         System.out.println(seasons);
         Data data1 = new Data();
         data1.dzien = 22;
+        Car samochod = new Car(5.5, "edf58s5", "123549");
+        samochod.drive();
+        honk();
+        pl.itechgroup.bank.gps.Car car1 = new pl.itechgroup.bank.gps.Car();
 
     }
 
@@ -27,5 +35,6 @@ public class Main {
     }
 
     enum Seasons {WINTER, SPRING, SUMMER, FALL}
+
 
 }
