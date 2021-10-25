@@ -21,4 +21,10 @@ public class Car {
     {
         System.out.println("Car width registration number "+ this.registrationNumber + " is driving");
     }
+
+    public  void count(Integer speed)
+    {
+        speed = 20;
+        System.out.println("Predkosc = "+speed);
+    }
 }
