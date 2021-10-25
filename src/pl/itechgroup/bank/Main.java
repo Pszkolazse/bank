@@ -10,5 +10,15 @@ public class Main {
         person.getInfo();
         account.getInfo();
         transwer.getInfo();
+
+        for (int i = 1; i < 1000; i+=2) {
+            System.out.println(i);
+        }
+        int indexer = 1;
+        while (indexer<1000)
+        {
+            System.out.println(indexer);
+            indexer+=2;
+        }
     }
 }
