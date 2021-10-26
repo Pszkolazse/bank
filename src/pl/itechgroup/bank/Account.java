@@ -1,5 +1,10 @@
 package pl.itechgroup.bank;
 
+import java.text.Normalizer;
+import java.text.NumberFormat;
+import java.util.Currency;
+import java.util.Locale;
+
 public class Account {
     String login, passwod, email;
     int id;
@@ -13,11 +18,15 @@ public class Account {
         this.money = money;
     }
 
-    public StringBuilder getInfo() {
-        StringBuilder result = new StringBuilder();
-        result.append(String.format("login: %s  password: %s  email: %s  id: %s  money on account: %s",this.login, this.passwod,
-                this.email, this.id, this.money));
-         return result;
+    public String getInfo() {
+        Locale locale = new Locale("pl", "PL");
+        NumberFormat nf = NumberFormat.getCurrencyInstance(locale);
+        return(String.format("login: %s  password: %s  email: %s  id: %s  money on account: %s",this.login, this.passwod,
+                this.email, this.id, nf.format(this.money)));
     }
 
+    @Override
+    public String toString() {
+        return getInfo();
+    }
 }

@@ -12,8 +12,13 @@ public class Person {
         this.wzrost = wzrost;
     }
 
-    public void getInfo()
+    @Override
+    public String toString() {
+        return getInfo();
+    }
+
+    public String getInfo()
     {
-        System.out.println("imie: "+this.imie+"  nazwisko: "+this.nazwisko+"  pesel: "+this.pesel+"  wiek: "+wiek+"  wzrost: "+wzrost);
+        return ("imie: "+this.imie+"  nazwisko: "+this.nazwisko+"  pesel: "+this.pesel+"  wiek: "+this.wiek+"  wzrost: "+this.wzrost);
     }
 }
