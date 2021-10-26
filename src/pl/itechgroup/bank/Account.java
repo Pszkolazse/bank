@@ -13,8 +13,11 @@ public class Account {
         this.money = money;
     }
 
-    public void getInfo() {
-        System.out.println("login: " + this.login+"  password: "+this.passwod+"  email: "+this.email+"  id: "+this.id+"  money on account: "+money);
+    public StringBuilder getInfo() {
+        StringBuilder result = new StringBuilder();
+        result.append(String.format("login: %s  password: %s  email: %s  id: %s  money on account: %s",this.login, this.passwod,
+                this.email, this.id, this.money));
+         return result;
     }
 
 }
