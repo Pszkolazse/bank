@@ -1,6 +1,6 @@
 package pl.itechgroup.bank;
 
-public class Transwer {
+public class Transwer implements IInformation {
     String  direct;
     float input;
     float transfer;
@@ -12,8 +12,8 @@ public class Transwer {
         this.transfer = transfer;
     }
 
-    public void getInfo()
+    public String getInfo()
     {
-        System.out.println("input: "+this.input+"  direct: "+this.direct+"  transfer: "+this.transfer);
+        return("input: "+this.input+"  direct: "+this.direct+"  transfer: "+this.transfer);
     }
 }

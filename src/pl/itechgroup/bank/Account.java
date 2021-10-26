@@ -5,7 +5,7 @@ import java.text.NumberFormat;
 import java.util.Currency;
 import java.util.Locale;
 
-public class Account {
+public class Account implements IInformation{
     String login, passwod, email;
     int id;
     float money;

@@ -1,6 +1,6 @@
 package pl.itechgroup.bank;
 
-public class Person {
+public class Person implements IInformation {
     String imie, nazwisko, pesel;
     int wiek, wzrost;
 
