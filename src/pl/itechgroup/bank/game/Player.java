@@ -1,6 +1,12 @@
 package pl.itechgroup.bank.game;
 
+import java.util.List;
+
 public class Player implements IDamageAble, IInventory, IState{
+
+
+    float Health = 0;
+    public Weapon weapon;
 
     public Player(float health) {
         Health = health;
@@ -8,9 +14,10 @@ public class Player implements IDamageAble, IInventory, IState{
 
     @Override
     public void TakeDamage(float damage) {
-        Health -= damage;
+       List list = (List)weapon.Attack();
+        Health -= damage + (int)list.get(0);
     }
-    float Health = 0;
+
     @Override
     public float getHealth() {
         return Health;

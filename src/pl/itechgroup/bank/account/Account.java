@@ -1,11 +1,13 @@
-package pl.itechgroup.bank;
+package pl.itechgroup.bank.account;
+
+import pl.itechgroup.bank.IInformation;
 
 import java.text.Normalizer;
 import java.text.NumberFormat;
 import java.util.Currency;
 import java.util.Locale;
 
-public class Account implements IInformation{
+public class Account implements IInformation {
     String login, passwod, email;
     int id;
     float money;

@@ -1,8 +1,19 @@
-package pl.itechgroup.bank;
+package pl.itechgroup.bank.account;
+
+import pl.itechgroup.bank.IInformation;
 
 public class Person implements IInformation {
     String imie, nazwisko, pesel;
     int wiek, wzrost;
+    Account account;
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
 
     public Person(String imie, String nazwisko, String pesel, int wiek, int wzrost) {
         this.imie = imie;
