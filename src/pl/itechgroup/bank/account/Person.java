@@ -32,4 +32,9 @@ public class Person implements IInformation {
     {
         return ("imie: "+this.imie+"  nazwisko: "+this.nazwisko+"  pesel: "+this.pesel+"  wiek: "+this.wiek+"  wzrost: "+this.wzrost);
     }
+
+    public String getInfo(boolean cleanNames) {
+        return (cleanNames) ? (""+this.imie+" "+this.nazwisko+" "+this.pesel+" "+this.wiek+" "+this.wzrost) :
+                getInfo();
+    }
 }
