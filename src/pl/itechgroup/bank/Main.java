@@ -2,14 +2,19 @@ package pl.itechgroup.bank;
 
 public class Main {
     public static void main(String[] args) {
-        String string = "55";
-        int length;
-        try {
-            length = string.length();
-            System.out.println(length);
+        String string = "nfoanmxroce";
+        char chars[] = new char[7];
+
+        for (int i = 0; i < string.length(); i++) {
+            try {
+                chars[i] = string.charAt(i);
+            }
+            catch (Exception e)
+            {
+                continue;
+            }
         }
-        catch (Exception e){
-            System.out.println(0);
-        }
+
+        System.out.println(chars);
     }
 }
