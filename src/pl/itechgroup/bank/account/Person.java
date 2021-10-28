@@ -2,10 +2,19 @@ package pl.itechgroup.bank.account;
 
 import pl.itechgroup.bank.IInformation;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Person implements IInformation {
     String imie, nazwisko, pesel;
     int wiek, wzrost;
     Account account;
+
+    protected static final Account DEFAULT_ACCAUNT;
+    protected static AtomicInteger ID_GENERATOR = new AtomicInteger(1);
+    
+    static {
+        DEFAULT_ACCAUNT = new Account("", "","",0,0);
+    }
 
     public Account getAccount() {
         return account;
@@ -21,6 +30,7 @@ public class Person implements IInformation {
         this.pesel = pesel;
         this.wiek = wiek;
         this.wzrost = wzrost;
+        this.account = DEFAULT_ACCAUNT;
     }
 
     @Override

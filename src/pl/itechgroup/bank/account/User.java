@@ -13,7 +13,7 @@ public class User extends Person implements IInformation {
         super(imie, nazwisko, pesel, wiek, wzrost);
         this.login = login;
         this.password = haslo;
-        this.id = id;
+        this.id =ID_GENERATOR.getAndIncrement();
     }
     public User(String imie, String nazwisko, String pesel, int wiek, int wzrost, String login, String haslo) {
         super(imie, nazwisko, pesel, wiek, wzrost);
