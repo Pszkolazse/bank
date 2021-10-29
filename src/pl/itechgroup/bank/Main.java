@@ -21,8 +21,7 @@ public class Main {
                 transfer = TransferService.transfer(p1, p2, 32.4f);
                 break;
             } catch (AccountNotFoundExeption e) {
-                p1.setAccount(new Account("","","",0,0f));
-                p2.setAccount(new Account("","","",0,0f));
+                e.person.setAccount(new Account("","","",0,0f));
             }
         }
 

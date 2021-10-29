@@ -6,7 +6,8 @@ import java.util.Date;
 public class TransferService {
 
     public static Transfer transfer(Person sender, Person receiver, float amount) throws AccountNotFoundExeption {
-        if (sender.getAccount()==null || receiver.getAccount()==null) throw new AccountNotFoundExeption();
+        if (sender.getAccount()==null) throw new AccountNotFoundExeption(sender);
+        if (receiver.getAccount()==null) throw new AccountNotFoundExeption(receiver);
         if (checkAccountBalance(sender, amount)) {
             sender.getAccount().money -= amount;
             receiver.getAccount().money += amount;
