@@ -1,11 +1,13 @@
 package pl.itechgroup.bank.account;
 
-import java.util.Date;
+import pl.itechgroup.bank.exceptions.AccountNotFoundExeption;
 
+import java.util.Date;
 public class TransferService {
 
-    public static Transfer transfer(Person sender, Person receiver, float ammout) {
+    public static Transfer transfer(Person sender, Person receiver, float ammout) throws AccountNotFoundExeption {
         if (checkAccountBalance(sender, ammout)) {
+            if (sender.getAccount()==null || receiver.getAccount()==null) throw new AccountNotFoundExeption();
             sender.getAccount().money -= ammout;
             receiver.getAccount().money += ammout;
             return new Transfer(sender, receiver, ammout, new Date());
